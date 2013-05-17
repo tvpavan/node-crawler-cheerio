@@ -1,7 +1,7 @@
-node-crawler
+node-crawler-cheerio
 ------------
 
-node-crawler aims to be the best crawling/scraping package for Node.
+node-crawler-cheerio forks from node-crawler that aims to be the best crawling/scraping package for Node. It replaces jQuery by using cheerio, a more fast, flexible one but with less memory, which will make the crawler work more efficiently.
 
 It features:
  * A clean, simple API
@@ -121,58 +121,8 @@ When using timeouts, to avoid triggering [Node #3076](https://github.com/joyent/
 There is now a complete memory leak test for node-crawler :)
 
 
-How to test
------------
-
-    $ npm install && npm test
-
-Feel free to add more tests!
-
-[![build status](https://secure.travis-ci.org/sylvinus/node-crawler.png)](http://travis-ci.org/sylvinus/node-crawler)
-
-Rough todolist
---------------
- 
- * Make Sizzle tests pass (jsdom bug? https://github.com/tmpvar/jsdom/issues#issue/81)
- * More crawling tests
- * Document the API more (+ the result object)
- * Get feedback on featureset for a 1.0 release (option for autofollowing links?)
- * Check how we can support other mimetypes than HTML
- * Option to wait for callback to finish before freeing the pool resource (via another callback like next())
-
 	
 ChangeLog
 ---------
-0.2.4
- - Fixed a bug with response.body being a Buffer in some cases
- - Wrapped jsdom calls in a try/catch to isolate us from crashes
-
-0.2.3
- - Added gzip support
- - Support for userAgent option
- - Added fallback on iconv-lite and marked iconv as optional dependency
-
-0.2.2
- - Fix relative link bug, all a.href should be absolute when crawling a remote URL
- - Updated default jQuery to 1.8.3, request to 2.12.0, genericpool to 2.0.2
- - Fixed memory leak by adding the autoWindowClose option
- - Added memory leak test
-
-0.2.1
- - Updated jsdom to 0.2.19
-
-0.2.0
- - Updated code & dependencies for node 0.6/0.8, cleaned package.json
- - Added a forceUTF8 mode
- - Added real unit tests & travis-ci
- - Added some docs!
- - Added onDrain()
- - Code refactor
- - [BACKWARD-INCOMPATIBLE] Timeout parameters now in milliseconds (weren't documented)
-
-0.1.0
- - Updated dependencies, notably node 0.4.x
- - Fixes jQuery being redownloaded at each page + include it in the tree
- - Cache support
- - Retries
- - Updated priority support with new generic-pool>=1.0.4
+0.1
+ - Use cheerio to replace jquery
