@@ -31,7 +31,7 @@
     "repository":
         {
             "type": "git",
-            "url": "https://github.com/sylvinus/node-crawler.git"
+            "url": "https://github.com/virushuo/node-crawler-cheerio"
         }
     ,
     "dependencies": {
